@@ -24,6 +24,11 @@ public class WebDriverUtil
 	{
 		String chromeVersion = context.getCurrentXmlTest().getParameter("chrome.version");
 
+		if(chromeVersion == null)
+		{
+			chromeVersion = "80";
+		}
+		
 		System.setProperty(AppConstants.CHROME_DRIVER, AppConstants.CHROME_DRIVER_PATH.replace("XX", chromeVersion));  
 	}
 	
